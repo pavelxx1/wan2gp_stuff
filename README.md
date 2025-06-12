@@ -2,7 +2,6 @@
 wan2gp for rtx 40xx & 50xx - one click install
 
 ## RTX 50XX
-
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
@@ -23,8 +22,8 @@ python wgp.py --share
 ```
 
 ## RTX 40XX
-
-bashwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 eval "$($HOME/miniconda3/bin/conda shell.bash hook)"
