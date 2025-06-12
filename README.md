@@ -20,7 +20,7 @@ python setup.py install
 cd ../
 ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ${CONDA_PREFIX}/lib/libstdc++.so.6
 python wgp.py --share
-
+```
 
 ## RTX 40XX
 
