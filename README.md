@@ -10,6 +10,8 @@ $HOME/miniconda3/bin/conda init bash
 source ~/.bashrc
 git clone https://github.com/deepbeepmeep/Wan2GP.git
 cd Wan2GP
+# Fix matplotlib backend
+sed -i "s/matplotlib.use('TkAgg')/matplotlib.use('Agg')/g" preprocessing/dwpose/pose.py
 conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
 pip install torch==2.7.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
@@ -31,6 +33,8 @@ $HOME/miniconda3/bin/conda init bash
 source ~/.bashrc
 git clone https://github.com/deepbeepmeep/Wan2GP.git
 cd Wan2GP
+# Fix matplotlib backend
+sed -i "s/matplotlib.use('TkAgg')/matplotlib.use('Agg')/g" preprocessing/dwpose/pose.py
 conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/cu124
