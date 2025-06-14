@@ -45,7 +45,7 @@ cd Wan2GP
 sed -i "s/matplotlib.use('TkAgg')/matplotlib.use('Agg')/g" preprocessing/dwpose/pose.py
 conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
-pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/cu124
+pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 pip install -r requirements.txt
 #ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ${CONDA_PREFIX}/lib/libstdc++.so.6
 conda install -c conda-forge gcc_linux-64 gxx_linux-64 libstdcxx-ng -y
