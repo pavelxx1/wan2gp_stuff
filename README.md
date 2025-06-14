@@ -23,6 +23,12 @@ cd ../
 ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ${CONDA_PREFIX}/lib/libstdc++.so.6
 python wgp.py --share
 ```
+## Launch
+```bash
+cd Wan2GP
+conda activate wan2gp
+python wgp.py --share
+```
 
 ## RTX 40XX
 ```bash
