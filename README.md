@@ -57,7 +57,7 @@ cd ../
 python wgp.py --share
 ```
 
-##Loara
+## Lora Wan2.1_I2V_14B_FusionX_LoRA
 ```bash
 https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_LoRa/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
 ```
