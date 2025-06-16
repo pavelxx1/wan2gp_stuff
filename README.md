@@ -68,5 +68,5 @@ ffmpeg -i video.mp4 -i 655565__sergequadrado__hush-little-baby.wav -filter_compl
 
 ## FFMPEG add audio
 ```bash
-ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4
+ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4 -y
 ```
