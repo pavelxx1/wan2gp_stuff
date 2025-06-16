@@ -8,6 +8,14 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 $HOME/miniconda3/bin/conda init bash
 source ~/.bashrc
+# Install ffmpeg with sudo check
+if command -v sudo >/dev/null 2>&1; then
+    sudo apt update
+    sudo apt install ffmpeg -y
+else
+    apt update
+    apt install ffmpeg -y
+fi
 git clone https://github.com/deepbeepmeep/Wan2GP.git
 cd Wan2GP
 # Fix matplotlib backend
