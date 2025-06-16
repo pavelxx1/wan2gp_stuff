@@ -65,3 +65,8 @@ https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_Lo
 ```bash
 ffmpeg -i video.mp4 -i 655565__sergequadrado__hush-little-baby.wav -filter_complex "[1:a]volume=1[a1];[0:a][a1]amix=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -shortest output.mp4
 ```
+
+## FFMPEG add audio
+```bash
+ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4
+```
