@@ -29,8 +29,9 @@ cd SageAttention
 python setup.py install
 cd ../
 #ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ${CONDA_PREFIX}/lib/libstdc++.so.6
-conda install -c conda-forge gcc_linux-64 gxx_linux-64 libstdcxx-ng -y
-conda install -c conda-forge libstdcxx-ng -y
+#conda install -c conda-forge gcc_linux-64 gxx_linux-64 libstdcxx-ng -y
+#conda install -c conda-forge libstdcxx-ng -y
+conda install  -c conda-forge libstdcxx-ng gcc_linux-64=11.4.0 gxx_linux-64=11.4.0 -y
 python wgp.py --share
 ```
 ## Launch
