@@ -88,7 +88,8 @@ ffmpeg -i video.mp4 -i 655565__sergequadrado__hush-little-baby.wav -filter_compl
 ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -shortest output.mp4 -y
 ```
 
-## 4090 fix
+
+## 4090 fix!
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
@@ -111,7 +112,7 @@ sed -i 's/filter_letters(video_prompt_type, "PDSFCMU"))/filter_letters(video_pro
 conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
 
-# ========== ДОБАВЬТЕ ЭТО ПОСЛЕ АКТИВАЦИИ ОКРУЖЕНИЯ ==========
+# ========== FIXUP_1 ==========
 # Установка CUDA 12.4 toolkit через conda
 conda install -c nvidia cuda-toolkit=12.4 -y
 export CUDA_HOME=$CONDA_PREFIX
@@ -126,7 +127,7 @@ conda install -c conda-forge libstdcxx-ng gcc_linux-64=11.4.0 gxx_linux-64=11.4.
 git clone https://github.com/thu-ml/SageAttention
 cd SageAttention 
 
-# ========== ЗАМЕНИТЕ ЭТУ СТРОКУ ==========
+# ========== FIXUP_2 ==========
 # Вместо: python setup.py install
 pip install . --no-build-isolation
 # ========================================
