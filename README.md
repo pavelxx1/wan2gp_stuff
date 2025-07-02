@@ -112,26 +112,25 @@ sed -i 's/filter_letters(video_prompt_type, "PDSFCMU"))/filter_letters(video_pro
 conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
 
-# ========== FIXUP_1 ==========
-# Установка CUDA 12.4 toolkit через conda
-conda install -c nvidia cuda-toolkit=12.4 -y
+# ========== ПРОВЕРКА И ОБНОВЛЕНИЕ CUDA ==========
+CURRENT_CUDA=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}')
+REQUIRED_CUDA="12.4"
+
+if [ "$(printf '%s\n' "$REQUIRED_CUDA" "$CURRENT_CUDA" | sort -V | head -n1)" = "$REQUIRED_CUDA" ] && [ "$CURRENT_CUDA" != "$REQUIRED_CUDA" ]; then
+    echo "CUDA $CURRENT_CUDA >= $REQUIRED_CUDA, пропускаем обновление"
+else
+    echo "CUDA $CURRENT_CUDA < $REQUIRED_CUDA, устанавливаем CUDA 12.4"
+    conda install -c nvidia cuda-toolkit=12.4 -y
+fi
 export CUDA_HOME=$CONDA_PREFIX
-# ===========================================================
+# ===============================================
 
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 pip install -r requirements.txt
-#ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ${CONDA_PREFIX}/lib/libstdc++.so.6
-#conda install -c conda-forge gcc_linux-64 gxx_linux-64 libstdcxx-ng -y
 conda install -c conda-forge libstdcxx-ng gcc_linux-64=11.4.0 gxx_linux-64=11.4.0 -y
-#conda install -c conda-forge libstdcxx-ng -y
 git clone https://github.com/thu-ml/SageAttention
 cd SageAttention 
-
-# ========== FIXUP_2 ==========
-# Вместо: python setup.py install
 pip install . --no-build-isolation
-# ========================================
-
 cd ../
 python wgp.py --share
 ```
