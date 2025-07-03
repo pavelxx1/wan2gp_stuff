@@ -36,6 +36,7 @@ python wgp.py --share
 ```bash
 cd Wan2GP
 conda activate wan2gp
+export SERVER_NAME="0.0.0.0"
 python wgp.py --share
 ```
 
