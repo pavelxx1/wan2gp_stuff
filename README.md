@@ -118,7 +118,7 @@ conda activate wan2gp
 CURRENT_CUDA=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}')
 REQUIRED_CUDA="12.4"
 
-if [ "$(printf '%s\n' "$REQUIRED_CUDA" "$CURRENT_CUDA" | sort -V | head -n1)" = "$REQUIRED_CUDA" ] && [ "$CURRENT_CUDA" != "$REQUIRED_CUDA" ]; then
+if [ "$(printf '%s\n' "$CURRENT_CUDA" "$REQUIRED_CUDA" | sort -V | head -n1)" = "$REQUIRED_CUDA" ]; then
     echo "CUDA $CURRENT_CUDA >= $REQUIRED_CUDA, пропускаем обновление"
 else
     echo "CUDA $CURRENT_CUDA < $REQUIRED_CUDA, устанавливаем CUDA 12.4"
