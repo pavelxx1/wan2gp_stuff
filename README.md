@@ -71,6 +71,7 @@ git clone https://github.com/thu-ml/SageAttention
 cd SageAttention 
 python setup.py install
 cd ../
+export SERVER_NAME="0.0.0.0"
 python wgp.py --share
 ```
 
@@ -132,5 +133,6 @@ git clone https://github.com/thu-ml/SageAttention
 cd SageAttention 
 pip install . --no-build-isolation
 cd ../
+export SERVER_NAME="0.0.0.0"
 python wgp.py --share
 ```
