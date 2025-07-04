@@ -115,16 +115,8 @@ conda create -n wan2gp python=3.10.9 -y
 conda activate wan2gp
 
 # ========== ПРОВЕРКА И ОБНОВЛЕНИЕ CUDA ==========
-CURRENT_CUDA=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}')
-REQUIRED_CUDA="12.4"
-
-if [ "$(printf '%s\n' "$CURRENT_CUDA" "$REQUIRED_CUDA" | sort -V | head -n1)" = "$REQUIRED_CUDA" ]; then
-    echo "CUDA $CURRENT_CUDA >= $REQUIRED_CUDA, пропускаем обновление"
-else
-    echo "CUDA $CURRENT_CUDA < $REQUIRED_CUDA, устанавливаем CUDA 12.4"
-    conda install -c nvidia cuda-toolkit=12.4 -y
-    export CUDA_HOME=$CONDA_PREFIX
-fi
+conda install -c nvidia cuda-toolkit=12.4 -y
+export CUDA_HOME=$CONDA_PREFIX
 # ===============================================
 
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
