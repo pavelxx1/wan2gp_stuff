@@ -123,8 +123,8 @@ if [ "$(printf '%s\n' "$CURRENT_CUDA" "$REQUIRED_CUDA" | sort -V | head -n1)" = 
 else
     echo "CUDA $CURRENT_CUDA < $REQUIRED_CUDA, устанавливаем CUDA 12.4"
     conda install -c nvidia cuda-toolkit=12.4 -y
+    export CUDA_HOME=$CONDA_PREFIX
 fi
-export CUDA_HOME=$CONDA_PREFIX
 # ===============================================
 
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
