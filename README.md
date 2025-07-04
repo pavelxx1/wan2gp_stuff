@@ -116,7 +116,7 @@ conda activate wan2gp
 
 # ========== ПРОВЕРКА И ОБНОВЛЕНИЕ CUDA ==========
 conda install -c nvidia cuda-toolkit=12.4 -y
-export CUDA_HOME=$CONDA_PREFIX
+# export CUDA_HOME=$CONDA_PREFIX
 # ===============================================
 
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
