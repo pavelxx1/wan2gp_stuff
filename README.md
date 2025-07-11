@@ -154,6 +154,8 @@ conda install -c conda-forge ffmpeg -y
 git clone https://github.com/MeiGen-AI/MultiTalk.git
 cd MultiTalk
 pip install -r requirements.txt
+pip install --upgrade numpy
+pip install --force-reinstall transformers==4.52
 huggingface-cli download Wan-AI/Wan2.1-I2V-14B-480P --local-dir ./weights/Wan2.1-I2V-14B-480P
 huggingface-cli download TencentGameMate/chinese-wav2vec2-base --local-dir ./weights/chinese-wav2vec2-base
 huggingface-cli download TencentGameMate/chinese-wav2vec2-base model.safetensors --revision refs/pr/1 --local-dir ./weights/chinese-wav2vec2-base
@@ -164,9 +166,5 @@ cp weights/MeiGen-MultiTalk/diffusion_pytorch_model.safetensors.index.json weigh
 cp weights/MeiGen-MultiTalk/multitalk.safetensors weights/Wan2.1-I2V-14B-480P/
 wget -O ./weights/Wan2.1_I2V_14B_FusionX_LoRA.safetensors https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_LoRa/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
 sed -i 's/demo\.launch(server_name="0\.0\.0\.0", debug=True, server_port=8418)/demo.launch(server_name="0.0.0.0", debug=True, server_port=8418, share=True)/g' app.py
-python app.py \
-    --lora_dir weights/Wan2.1_I2V_14B_FusionX_LoRA.safetensors \
-    --lora_scale 1.0 \
-    --num_persistent_param_in_dit 0 \
-    --sample_shift 2
+
 ```
