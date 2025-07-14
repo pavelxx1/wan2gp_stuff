@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 
 # Faster Whisper Server Setup Script
@@ -42,3 +43,4 @@ echo "Server will be available at: http://${IP}:${PORT}"
 # Start the server
 echo "Starting Faster Whisper Server..."
 uvicorn faster_whisper_server.main:create_app --factory --host 0.0.0.0 --port 8000
+```
