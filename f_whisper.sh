@@ -2,9 +2,6 @@
 
 # Faster Whisper Server Setup Script
 
-# Change to /tmp directory
-# cd /tmp
-
 # Install unzip if not available
 apt update && apt install -y unzip wget
 
@@ -37,7 +34,11 @@ pip install .[client,dev,ui]
 export PRELOAD_MODELS='["deepdml/faster-whisper-large-v3-turbo-ct2"]'
 export WHISPER__INFERENCE_DEVICE=cuda
 
+# Get port and IP for access URL
+PORT=$VAST_TCP_PORT_8000
+IP=$PUBLIC_IPADDR
+echo "Server will be available at: http://${IP}:${PORT}"
+
 # Start the server
 echo "Starting Faster Whisper Server..."
 uvicorn faster_whisper_server.main:create_app --factory --host 0.0.0.0 --port 8000
-
