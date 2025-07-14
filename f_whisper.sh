@@ -1,5 +1,3 @@
-# Faster-Whisper
-```
 #!/bin/bash
 
 # Faster Whisper Server Setup Script
@@ -42,4 +40,4 @@ export WHISPER__INFERENCE_DEVICE=cuda
 # Start the server
 echo "Starting Faster Whisper Server..."
 uvicorn faster_whisper_server.main:create_app --factory --host 0.0.0.0 --port 8000
-```
+
