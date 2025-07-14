@@ -3,7 +3,7 @@
 # Faster Whisper Server Setup Script
 
 # Change to /tmp directory
-cd /tmp
+# cd /tmp
 
 # Install unzip if not available
 apt update && apt install -y unzip wget
